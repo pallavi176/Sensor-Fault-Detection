@@ -1,6 +1,7 @@
 pymongo[srv]==4.2.0
 scikit-learn
 sklearn
+scipy
 pandas
 PyYAML
 dill==0.3.5.1
