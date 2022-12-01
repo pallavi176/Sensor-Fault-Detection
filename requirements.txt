@@ -3,6 +3,7 @@ scikit-learn
 sklearn
 scipy
 pandas
+imblearn
 seaborn
 PyYAML
 dill==0.3.5.1
