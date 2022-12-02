@@ -4,6 +4,7 @@ sklearn
 scipy
 pandas
 imblearn
+xgboost==1.6.2
 seaborn
 PyYAML
 dill==0.3.5.1
