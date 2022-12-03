@@ -1,7 +1,6 @@
 import os
 import sys
 import pandas as pd
-from distutils import dir_util
 from scipy.stats import ks_2samp
 from sensor.constants.training_pipeline import SCHEMA_FILE_PATH
 from sensor.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
@@ -139,3 +138,4 @@ class DataValidation:
             return data_validation_artifact
         except Exception as e:
             raise SensorException(e, sys)
+
