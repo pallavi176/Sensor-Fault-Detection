@@ -130,3 +130,5 @@ dmypy.json
 
 artifact/
 report.yaml
+saved_models/
+
