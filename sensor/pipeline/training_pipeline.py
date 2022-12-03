@@ -1,7 +1,21 @@
 import os
 import sys
-from sensor.entity.config_entity import TrainingPipelineConfig, DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig, ModelPusherConfig
-from sensor.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
+from sensor.entity.config_entity import (
+    TrainingPipelineConfig, 
+    DataIngestionConfig, 
+    DataValidationConfig, 
+    DataTransformationConfig, 
+    ModelTrainerConfig, 
+    ModelEvaluationConfig, 
+    ModelPusherConfig
+)
+from sensor.entity.artifact_entity import (
+    DataIngestionArtifact, 
+    DataValidationArtifact, 
+    DataTransformationArtifact, 
+    ModelTrainerArtifact, 
+    ModelEvaluationArtifact
+)
 from sensor.components.data_ingestion import DataIngestion
 from sensor.components.data_validation import DataValidation
 from sensor.components.data_transformation import DataTransformation
@@ -75,7 +89,7 @@ class TrainPipeline:
         except  Exception as e:
             raise  SensorException(e, sys)
 
-    def start_model_pusher(self,model_eval_artifact: ModelEvaluationArtifact):
+    def start_model_pusher(self, model_eval_artifact: ModelEvaluationArtifact):
         try:
             model_pusher_config = ModelPusherConfig(training_pipeline_config=self.training_pipeline_config)
             model_pusher = ModelPusher(model_pusher_config, model_eval_artifact)

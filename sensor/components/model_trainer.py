@@ -1,13 +1,13 @@
 import os
 import sys
-from sensor.exception import SensorException
-from sensor.logger import logging
-from sensor.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
-from sensor.entity.config_entity import ModelTrainerConfig
 from xgboost import XGBClassifier
+from sensor.entity.config_entity import ModelTrainerConfig
+from sensor.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
 from sensor.ml.metric.classification_metric import get_classification_score
 from sensor.ml.model.estimator import SensorModel
 from sensor.utils.main_utils import load_numpy_array_data, save_object, load_object
+from sensor.exception import SensorException
+from sensor.logger import logging
 
 
 class ModelTrainer:

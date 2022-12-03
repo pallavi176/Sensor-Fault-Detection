@@ -1,8 +1,8 @@
 import os
 import sys
 import pandas as pd
-from sensor.entity.artifact_entity import DataValidationArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
 from sensor.entity.config_entity import ModelEvaluationConfig
+from sensor.entity.artifact_entity import DataValidationArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
 from sensor.ml.metric.classification_metric import get_classification_score
 from sensor.ml.model.estimator import ModelResolver, TargetValueMapping
 from sensor.constants.training_pipeline import TARGET_COLUMN
