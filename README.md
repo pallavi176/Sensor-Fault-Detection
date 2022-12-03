@@ -119,3 +119,5 @@ pip install ipykernel
 
 To run app
 uvicorn main:app
+or
+python main.py
