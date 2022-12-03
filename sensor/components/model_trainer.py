@@ -1,4 +1,3 @@
-
 import os
 import sys
 from sensor.exception import SensorException
@@ -58,7 +57,6 @@ class ModelTrainer:
             y_test_pred = model.predict(X_test)
             classification_test_metric = get_classification_score(y_true=y_test, y_pred=y_test_pred)
 
-
             # Overfitting and Underfitting
             diff = abs(classification_train_metric.f1_score - classification_test_metric.f1_score)
             
@@ -83,3 +81,4 @@ class ModelTrainer:
             return model_trainer_artifact
         except Exception as e:
             raise SensorException(e, sys)
+

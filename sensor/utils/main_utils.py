@@ -14,7 +14,6 @@ def read_yaml_file(file_path: str) -> dict:
     except Exception as e:
         raise SensorException(e, sys) from e
 
-
 def write_yaml_file(file_path: str, content: object, replace: bool = False) -> None:
     try:
         if replace:
@@ -25,8 +24,6 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
             yaml.dump(content, file)
     except Exception as e:
         raise SensorException(e, sys)
-
-
 
 def save_numpy_array_data(file_path: str, array: np.array):
     """
@@ -42,7 +39,6 @@ def save_numpy_array_data(file_path: str, array: np.array):
     except Exception as e:
         raise SensorException(e, sys) from e
 
-
 def load_numpy_array_data(file_path: str) -> np.array:
     """
     load numpy array data from file
@@ -55,7 +51,6 @@ def load_numpy_array_data(file_path: str) -> np.array:
     except Exception as e:
         raise SensorException(e, sys) from e
 
-
 def save_object(file_path: str, obj: object) -> None:
     try:
         logging.info("Entered the save_object method of MainUtils class")
@@ -65,7 +60,6 @@ def save_object(file_path: str, obj: object) -> None:
         logging.info("Exited the save_object method of MainUtils class")
     except Exception as e:
         raise SensorException(e, sys) from e
-
 
 def load_object(file_path: str, ) -> object:
     try:
