@@ -1,9 +1,8 @@
 import sys
-from typing import Optional
-
+import json
 import numpy as np
 import pandas as pd
-import json
+from typing import Optional
 from sensor.configuration.mongo_db_connection import MongoDBClient
 from sensor.constants.database import DATABASE_NAME
 from sensor.exception import SensorException
@@ -23,10 +22,9 @@ class SensorData:
         except Exception as e:
             raise SensorException(e, sys)
 
-
-    def save_csv_file(self,file_path ,collection_name: str, database_name: Optional[str] = None):
+    def save_csv_file(self, file_path, collection_name: str, database_name: Optional[str] = None):
         try:
-            data_frame=pd.read_csv(file_path)
+            data_frame = pd.read_csv(file_path)
             data_frame.reset_index(drop=True, inplace=True)
             records = list(json.loads(data_frame.T.to_json()).values())
             if database_name is None:
@@ -37,7 +35,6 @@ class SensorData:
             return len(records)
         except Exception as e:
             raise SensorException(e, sys)
-
 
     def export_collection_as_dataframe(
         self, collection_name: str, database_name: Optional[str] = None) -> pd.DataFrame:
