@@ -16,7 +16,7 @@ from sensor.exception import SensorException
 from sensor.logger import logging
 
 
-env_file_path=os.path.join(os.getcwd(), "env.yaml")
+env_file_path = os.path.join(os.getcwd(), "env.yaml")
 
 def set_env_variable(env_file_path):
 
@@ -54,6 +54,8 @@ async def predict_route():
     try:
         #get data from user csv file
         #conver csv file to dataframe
+
+        # calculate data drift
 
         df = None
         model_resolver = ModelResolver(model_dir=SAVED_MODEL_DIR)
