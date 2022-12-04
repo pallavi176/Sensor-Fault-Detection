@@ -1,4 +1,3 @@
-import os
 import sys
 from sensor.entity.config_entity import (
     TrainingPipelineConfig, 
