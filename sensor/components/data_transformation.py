@@ -26,6 +26,7 @@ class DataTransformation:
         :param data_validation_artifact: Output reference of data ingestion artifact stage
         :param data_transformation_config: configuration for data transformation
         """
+        
         try:
             self.data_validation_artifact = data_validation_artifact
             self.data_transformation_config = data_transformation_config
@@ -35,6 +36,7 @@ class DataTransformation:
 
     @staticmethod
     def read_data(file_path) -> pd.DataFrame:
+        
         try:
             return pd.read_csv(file_path)
         except Exception as e:
@@ -42,6 +44,7 @@ class DataTransformation:
 
     @classmethod
     def get_data_transformer_object(cls) -> Pipeline:
+        
         try:
             robust_scaler = RobustScaler()
             simple_imputer = SimpleImputer(strategy="constant", fill_value=0)
@@ -58,6 +61,7 @@ class DataTransformation:
 
     
     def initiate_data_transformation(self) -> DataTransformationArtifact:
+        
         try:
             
             train_df = DataTransformation.read_data(self.data_validation_artifact.valid_train_file_path)
